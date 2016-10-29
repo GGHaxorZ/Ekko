@@ -10,6 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.ChatColor;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -55,12 +56,16 @@ public class Faction {
     @Setter
     private String name, home;
 
+    @Getter @Setter
+    private ChatColor color;
+    
     private UUID uuid;
     private Set<Claim> claims;
 
-    public Faction(String name, UUID uuid) {
+    public Faction(String name, UUID uuid, ChatColor color) {
         this.name = name;
         this.uuid = uuid;
+        this.color = color;
 
         claims = new HashSet<>();
 
