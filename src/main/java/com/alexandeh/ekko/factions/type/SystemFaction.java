@@ -45,8 +45,12 @@ import java.util.*;
 @Setter
 public class SystemFaction extends Faction {
 
-    public SystemFaction(String name, UUID uuid) {
+    private org.bukkit.ChatColor color;
+    
+    public SystemFaction(String name, UUID uuid, org.bukkit.ChatColor color ) {
         super(name, uuid);
+        
+       this.color = color;
     }
 
     public boolean isRaidable() {
@@ -67,5 +71,7 @@ public class SystemFaction extends Faction {
 
     public void sendMessage(String message) {
     }
-
+    
+    @Override
+    public org.bukkit.ChatColor getColor() {return color;}
 }
